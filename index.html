@@ -19,6 +19,7 @@
     <script src="chessclock.js"></script>
     <style>
         html, body {margin: 0; height: 100%; overflow: hidden}
+        h1 { font-size: 8em;}
         .blacks {
             transform: rotate(180deg);
             
@@ -54,7 +55,7 @@
 <body>
     <div class="chessflex">
         <div class="container-fluid blacks">
-            <div class="card bg-dark">
+            <div class="card bg-dark" onclick="moved('black');">
                 <div class="card-header">
                     <h2><i id="bf" class="fa fa-flag"></i></h2>
                 </div>
@@ -63,7 +64,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" onclick="moved('black');">Terminei</button>
+                        <button class="btn btn-primary">Terminei</button>
                     </div>
                 </div>
             </div>
@@ -81,7 +82,7 @@
         </div>
         <hr>
         <div class="container-fluid whites">
-            <div class="card bg-light">
+            <div class="card bg-light"  onclick="moved('white');">
                 <div class="card-header">
                     <h2><i id="wf" class="fa fa-flag"></i></h2>
                 </div>
@@ -90,7 +91,7 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-grid gap-2">
-                        <button class="btn btn-primary" onclick="moved('white');">Terminei</button>
+                        <button class="btn btn-primary">Terminei</button>
                     </div>
                 </div>
             </div>
