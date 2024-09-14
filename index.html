@@ -18,64 +18,80 @@
 
     <script src="chessclock.js"></script>
     <style>
+        html, body {margin: 0; height: 100%; overflow: hidden}
         .blacks {
             transform: rotate(180deg);
+            
+            width: 90%;
+            top: 0;
         }
 
         .whites {
-            position: relative;
-            bottom: 0%;
+            width: 90%;
+            bottom: 0;
         }
 
         .bg-dark {
             color: white;
+            
         }
 
         .cinza {
             background-color: darkgray;
+            width: 70%;
+        }
+
+        .chessflex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            height: 100%;
+            
         }
     </style>
 </head>
 
 <body>
-    <div class="container-fluid blacks">
-        <div class="card bg-dark">
-            <div class="card-header">
-                <h2><i id="bf" class="fa fa-flag"></i></h2>
-            </div>
-            <div class="card-body">
-                <h1 class="text-center"><i class="fa fa-clock-o"></i> <span id="clock_black">05:00</span></h1>
-            </div>
-            <div class="card-footer">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" onclick="moved('black');">Terminei</button>
+    <div class="chessflex">
+        <div class="container-fluid blacks">
+            <div class="card bg-dark">
+                <div class="card-header">
+                    <h2><i id="bf" class="fa fa-flag"></i></h2>
+                </div>
+                <div class="card-body">
+                    <h1 class="text-center"><i class="fa fa-clock-o"></i> <span id="clock_black">05:00</span></h1>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" onclick="moved('black');">Terminei</button>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <div class="container-fluid cinza">
-        <button class="btn btn-info" onclick="config_btn();">Configurar</button>
-        <label for="clock_max">Tempo de relógio: </label><input type="time" name="clock_max" id="clock_max"
-            value="10:00">
-        <label for="clock_inc">Incremento por jogada: </label><input type="time" name="clock_inc" id="clock_inc"
-            value="00:00">
-        <button class="btn btn-success" onclick="start_clock();">Iniciar partida</button>
-        <button class="btn btn-warning" onclick="stop_clock();">Pausar</button>
-        <button class="btn btn-danger" onclick="window.location.reload(false);">Reiniciar</button>
-    </div>
-    <hr>
-    <div class="container-fluid whites">
-        <div class="card bg-light">
-            <div class="card-header">
-                <h2><i id="wf" class="fa fa-flag"></i></h2>
-            </div>
-            <div class="card-body">
-                <h1 class="text-center"><i class="fa fa-clock-o"></i> <span id="clock_white">05:00</span></h1>
-            </div>
-            <div class="card-footer">
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" onclick="moved('white');">Terminei</button>
+        <hr>
+        <div class="container-fluid cinza">
+            <button class="btn btn-info" onclick="config_btn();">Configurar</button>
+            <label for="clock_max">Tempo de relógio: </label><input type="time" name="clock_max" id="clock_max"
+                value="10:00">
+            <label for="clock_inc">Incremento por jogada: </label><input type="time" name="clock_inc" id="clock_inc"
+                value="00:00">
+            <button class="btn btn-success" onclick="start_clock();">Iniciar partida</button>
+            <button class="btn btn-warning" onclick="stop_clock();">Pausar</button>
+            <button class="btn btn-danger" onclick="window.location.reload(false);">Reiniciar</button>
+        </div>
+        <hr>
+        <div class="container-fluid whites">
+            <div class="card bg-light">
+                <div class="card-header">
+                    <h2><i id="wf" class="fa fa-flag"></i></h2>
+                </div>
+                <div class="card-body">
+                    <h1 class="text-center"><i class="fa fa-clock-o"></i> <span id="clock_white">05:00</span></h1>
+                </div>
+                <div class="card-footer">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-primary" onclick="moved('white');">Terminei</button>
+                    </div>
                 </div>
             </div>
         </div>
